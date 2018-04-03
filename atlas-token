@@ -1,0 +1,7 @@
+#!/bin/sh
+source "$HOME/.atlas-token"
+if [ -z "$PASS_ATLAS_TOKEN" ]; then
+	echo PASS_ATLAS_TOKEN empty
+	exit 1
+fi
+echo export ATLAS_TOKEN=\""$(${PASS_COMMAND:-pass} "$PASS_ATLAS_TOKEN")"\"
